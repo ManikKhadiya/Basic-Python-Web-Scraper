@@ -16,6 +16,9 @@
     https://www.selenium.dev/documentation/webdriver/browsers/firefox/
     https://github.com/mozilla/geckodriver/releases
 
+    and unzip to your c folder or somwhere thats easy toaccess and that youll remember
+    
+
 
 ## intall geopy to convert addresses to co ordinates
     pip install geopy
