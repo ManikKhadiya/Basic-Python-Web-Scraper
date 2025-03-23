@@ -3,7 +3,7 @@ from geopy.geocoders import Nominatim
 geolocator = Nominatim(user_agent="job_scraper")
 
 # Example job location
-location = "Edinburgh, Scotland"
+location = "Glasgow, Scotland"
 coords = geolocator.geocode(location)
 
 if coords:
@@ -45,11 +45,14 @@ for job in job_locations:
     if job_place:
         job_coords = (job_place.latitude, job_place.longitude)
         distance = geodesic(your_coords, job_coords).km
-        
+
+        print(f"📍 {job} is {distance:.2f} km away")  # Debugging line
+
         if distance <= search_radius:
             print(f"✅ {job} is within {distance:.2f} km")
         else:
             print(f"❌ {job} is too far ({distance:.2f} km away)")
     else:
         print(f"⚠ Could not find location: {job}")
+
 # The code above calculates the distance between your location and multiple job locations. You can set a maximum search radius to filter out jobs that are too far away.
